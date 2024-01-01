@@ -1,0 +1,60 @@
+rock = '''
+    _______
+---'   ____)
+      (_____)
+      (_____)
+      (____)
+---.__(___)
+'''
+
+paper = '''
+    _______
+---'   ____)____
+          ______)
+          _______)
+         _______)
+---.__________)
+'''
+
+scissors = '''
+    _______
+---'   ____)____
+          ______)
+       __________)
+      (____)
+---.__(___)
+'''
+
+#Write your code below this line 👇
+import random
+
+list_item = ['rock','paper','scissors']
+player = int(input("Enter your choice, 0 for rock,1 for paper, 2 for scissors:"))
+print( list_item[player])
+if(player == 0):
+  print(rock)
+elif(player == 1):
+  print(paper)
+else:
+  print(scissors)
+  
+
+computer = random.randint(0,len(list_item)-1)
+print(computer)
+print(list_item[computer])
+if(computer == 0):
+  print(rock)
+elif(computer == 1):
+  print(paper)
+else:
+  print(scissors)
+  
+
+if((player == 0 and computer == 1) or(player == 1 and computer == 2) or(computer == 0 and player == 2)):
+  print("You lose")
+elif((player== 1 and computer == 0 )or(player == 2 and computer == 1)or(computer == 2 and player == 0)):
+  print("You win")
+else:
+  print("Draw")
+exit(0)
+
