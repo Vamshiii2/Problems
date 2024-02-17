@@ -1,0 +1,61 @@
+import random
+
+def again():
+    flag = True
+    while(flag):
+        print("Guess a number between 1 and 100")
+        level = input("Choose 'easy' or 'hard':")
+        if(level == "hard"):
+            print("You have total 5 chances")
+            count = 5
+            ans = random.randint(1,100)
+            while(count):
+                guess_num = int(input("Guess a number:"))
+                if(guess_num<ans):
+                    print("Too Low")
+                elif(guess_num>ans):
+                    print("Too High")
+                elif(guess_num==ans):
+                    print(f"You are correct! The number is {ans}")
+                    break
+                count = count - 1
+                if(count == 0):
+                    print("All chances are done :(")
+                else:
+                   print(f"You have {count} chances")
+            reply = input("Want to play again 'y' or 'n'?")
+            if(reply == 'y'):
+                again()
+            elif(reply == 'n'):
+                flag = False
+        
+        elif(level == "easy"):
+            print("You have total 10 chances")
+            count = 10
+            ans = random.randint(1,100)
+            while(count):
+                guess_num = int(input("Guess a number:"))
+                if(guess_num<ans):
+                    print("Too Low")
+                elif(guess_num>ans):
+                    print("Too High")
+                elif(guess_num==ans):
+                    print(f"You are correct! The number is {ans}")
+                    break;
+                count = count - 1
+                if(count == 0):
+                    print("All chances are done :(")
+                else:
+                   print(f"You have {count} chances")
+                   
+            reply = input("Want to play again 'y' or 'n'?")
+            if(reply == 'y'):
+                again()
+            elif(reply == 'n'):
+                flag = False
+             
+        else:
+            print("Invalid choice")
+            
+again()   
+    
