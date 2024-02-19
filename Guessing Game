@@ -1,7 +1,7 @@
 import random
-
+flag = True
 def again():
-    flag = True
+    global flag
     while(flag):
         print("Guess a number between 1 and 100")
         level = input("Choose 'easy' or 'hard':")
@@ -28,7 +28,7 @@ def again():
                 again()
             elif(reply == 'n'):
                 flag = False
-        
+                return "Thanks for playing"
         elif(level == "easy"):
             print("You have total 10 chances")
             count = 10
@@ -53,9 +53,10 @@ def again():
                 again()
             elif(reply == 'n'):
                 flag = False
-             
+                return "Thanks for playing"
         else:
             print("Invalid choice")
-            
+      
+      
 again()   
     
